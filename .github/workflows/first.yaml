@@ -8,30 +8,7 @@ jobs:
     name: My first job
     runs-on: ubuntu-latest
     steps:
-      - name: step one
-        env:
-          MY_VAR: Hi there! My name is
+      - name: Download REPO
         uses: actions/checkout@v2
-      - name: second step
-        run: date
-  job2:
-    name: My second Job
-    runs-on: ubuntu-latest
-    steps:
-      - name: step one Job2
-        env:
-          MY_VAR: Hi there! My name is
-          FIRST_NAME: Mona
-          MIDDLE_NAME: The
-          LAST_NAME: Octocat
-        run: |
-          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-      - name: second step Job2
-        run: date
-  job3:
-    name: My third Job
-    runs-on: ubuntu-latest
-    needs: [job1,job2]
-    steps:
-      - name: first step Job3
-        run: python --version
+      - name: Python Syntax Checker
+        uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
