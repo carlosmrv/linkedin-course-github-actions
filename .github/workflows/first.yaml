@@ -11,8 +11,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Python Syntax Checker
         uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
-      - name: Python Linter
-        uses: sunnysid3up/python-linter@v0.1-beta.7
       - name: Execute python test
         run: |
             ls -la
