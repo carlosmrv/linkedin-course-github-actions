@@ -13,7 +13,7 @@ jobs:
           MY_VAR: Hi there! My name is
         uses: actions/checkout@v2
       - name: second step
-        run: env | sort
+        run: date
   job2:
     name: My second Job
     runs-on: ubuntu-latest
@@ -27,4 +27,11 @@ jobs:
         run: |
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
       - name: second step Job2
-        run: env | sort
+        run: date
+  job3:
+    name: My third Job
+    runs-on: ubuntu-latest
+    needs: [job1,job2]
+    steps:
+      - name: first step Job3
+        run: python --version
