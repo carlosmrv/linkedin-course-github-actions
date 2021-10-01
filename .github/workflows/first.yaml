@@ -15,3 +15,4 @@ jobs:
         run: |
             ls -la
             python main.py
+            echo $GITHUB_ACTOR
