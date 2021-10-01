@@ -1,0 +1,29 @@
+name: first
+
+on: push
+
+jobs:
+  job1:
+    name: My first job
+    runs-on: ubuntu-latest
+    steps:
+      - name: step one
+        env:
+          MY_VAR: Hi there! My name is
+        uses: actions/checkout@V2
+      - name: second step
+        run: env | sort
+  job2:
+    name: My second Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: step one Job2
+        env:
+          MY_VAR: Hi there! My name is
+          FIRST_NAME: Mona
+          MIDDLE_NAME: The
+          LAST_NAME: Octocat
+        run: |
+          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+      - name: second step Job2
+        run: env | sort
