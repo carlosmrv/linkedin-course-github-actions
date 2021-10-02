@@ -52,3 +52,7 @@ jobs:
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
+  test_image:
+    needs: [build_image]
+    runs-on: ubuntu-18.04
+    steps:
