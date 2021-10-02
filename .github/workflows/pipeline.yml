@@ -19,7 +19,7 @@ jobs:
 
     - name: Lint code
       run: |
-        flake8 --ignore=E501,E231 *.py
+        flake8 --ignore=E501,E231 *.py 235
 
     - name: Run unit tests
       run: |
