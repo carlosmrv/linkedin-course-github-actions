@@ -56,3 +56,5 @@ jobs:
     needs: [build_image]
     runs-on: ubuntu-18.04
     steps:
+    - name: Run unit tests in container
+      run: docker run "${{ secrets.DOCKER_HUB_USERNAME }}/github-test:latest" -m unittest --verbose --failfast
