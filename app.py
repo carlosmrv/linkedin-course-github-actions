@@ -9,7 +9,6 @@ APP = Flask(__name__)
 
 # Load the data
 with json.load(open('data.json', 'r')) as MASCOTS:
-
     @APP.route('/', methods=['GET'])
     def get_mascots():
         """
@@ -42,7 +41,6 @@ with json.load(open('data.json', 'r')) as MASCOTS:
         Returns: HTTP 404 with r
         """
         return make_response(jsonify({'error': str(error)}), 404)
-
 
 if __name__ == '__main__':
     APP.run("0.0.0.0", port=8080, debug=True)
