@@ -58,3 +58,9 @@ jobs:
     steps:
     - name: Run unit tests in container
       run: docker run "${{ secrets.DOCKER_HUB_USERNAME }}/github-test:latest" -m unittest --verbose --failfast
+  test_custom_action:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Test Ansible actions
+      uses: carlosmrv/ansible-github-actions@main
+
