@@ -63,6 +63,8 @@ jobs:
     env:
       DAY_OF_WEEK: Mon
       USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+    environment: 'PRO'
+    needs: [test_image]
     steps:
     - name: Test Ansible actions
       uses: carlosmrv/ansible-github-actions@main
