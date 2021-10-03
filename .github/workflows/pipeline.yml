@@ -62,6 +62,7 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       DAY_OF_WEEK: Mon
+      USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
     steps:
     - name: Test Ansible actions
       uses: carlosmrv/ansible-github-actions@main
