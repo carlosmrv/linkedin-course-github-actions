@@ -1,6 +1,14 @@
 name: Pipeline
 
-on: [push]
+on:
+  workflow_dispatch:
+    inputs:
+      PROPERTIES:
+        description: 'Properties Version'
+        required: true
+        default: '1.20'
+      tags:
+        description: 'Test scenario tags'
 env:
   APPLICATION_NAME: app2
 jobs:
